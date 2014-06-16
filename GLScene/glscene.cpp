@@ -17,11 +17,16 @@ void GLScene::draw()
 {
 
 	qglClearColor(Qt::white);
-	glLoadIdentity();
 	glColor3f(1.0, 0.0, 0.0);
 	glBegin(GL_TRIANGLES);
 	glVertex3f(0.0, 0.0, 0.0);
 	glVertex3f(1.0, 0.0, 0.0);
+	glVertex3f(0.0, 1.0, 0.0);
+	glEnd();
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(0.0, 0.0, 1.0);
 	glVertex3f(0.0, 1.0, 0.0);
 	glEnd();
 	glFlush();
@@ -29,4 +34,10 @@ void GLScene::draw()
 
 void GLScene::init()
 {
+}
+
+void GLScene::initializeGL()
+{
+	glLoadIdentity();
+	glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
 }

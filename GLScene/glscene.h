@@ -15,6 +15,7 @@ public:
 protected :
 	virtual void draw();
 	virtual void init();
+	virtual void initializeGL();
 private:
 };
 
